@@ -1,18 +1,25 @@
+
+//Modulos que se requieren
 const express = require("express");
+//Modulo pa los layouts
+const ejsLayouts = require("express-ejs-layouts");
+//App
 const app = express();
-const path = require("path");
+const port = process.env.PORT || 8080;
+//modulo para que use la carpeta public para lo de SASS
+app.use(express.static('public'));
 
-//settings
-app.set('port', 8080);
+//Motor de Vistas EJS
+app.set('view engine', 'ejs');
+app.use(ejsLayouts);
 
-//middleware
-app.use(express.static(path.join(__dirname, 'public')));
+//bodyParser
+app.use(express.urlencoded({ extended: true }));
 
-//routes
-app.get('/', (req, res)=>{
-    res.send('Hola petes')
-})
+//Cargar Modulo de ROUTES
+const router = require('./routes/routes');
+app.use('/', router);
 
-app.listen(app.get('port'), ()=>{
-    console.log(`Servidor funcionando en puerto ${app.get('port')}`)
+app.listen(port, ()=>{
+    console.log(`Servidor funcionando en puerto ${port}`)
 })
