@@ -1,20 +1,121 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
 body {
-    font-size: 16px;
-    line-height: 1.5;
-  }
+  background-color: #3bb2b8;
+  background: linear-gradient(
+    1000deg,
+    rgba(217, 233, 144, 0.76),
+    rgb(243, 242, 247)
+  );
+  background-repeat: no-repeat;
+  height: 1000vh;
+  font-family: "Open Sans", sans-serif;
+}
+header { 
+  color: rgb(67, 82, 3);
   
-  header .navbar {
-    border-radius: 0;
-    margin: 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(67, 82, 3);
+}
+.text-center {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.greenseed-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.greenseed-gallery div > img {
+  max-width: 100%;
+  display: block;
+}
+
+.greenseed-gallery div {
+  margin: 10px;
+  flex-basis: 180px;
+}
+
+@media only screen and (max-width: 480px) {
+  .greenseed-gallery {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .navbar-custom{
-    background-color: lightgreen;
+  .lightbox > div {
+    margin-bottom: 10px;
   }
-  
+}
 
-  .navbar-custom .navbar-brand,
-        .navbar-custom .navbar-text {
-            color: white;
-        }
-  
+/*Lighbox CSS*/
+
+.lightbox {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+.lightbox img {
+  display: block;
+  margin: auto;
+}
+
+.lightbox .caption {
+  margin: 15px auto;
+  width: 50%;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #eee;
+}
+
+.github-link {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.github-link:hover,
+.github-link:active,
+.github-link:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+div#general{
+  margin: auto;
+  margin-top: 50px;
+  width: 1500px;
+  height: 1800px;
+  background-color: rgba(157, 207, 157, 0.274);
+}
+div#aside{
+  float: right;
+  width: 300px;
+  height: 1800px;
+  background-color: rgba(49, 53, 105, 0.274);
+
+}
+div#mid{
+  float: left;
+  width: 1200px;
+  height: 1800px;
+  background-color: rgba(15, 21, 116, 0.274);
+}
+
